@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hodgepodge Garage</title>
+  
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1" id="wixDesktopViewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <script type="javascript" src="js/main.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous">
+  </script>
+
+</head>
+
+
+<body>
+<header>
+  <a href="index.html">
+    <div class="logo">Hodgepodge Garage</div>
+  </a>
+  <ul>
+    <li class="navlink" data-url="about.html"><a>About</a></li>
+    <li class="navlink" data-url="location.html"><a>Locations</a></li>
+    <li class="navlink" data-url="map.html"><a>Map</a></li>
+    <li class="navlink" data-url="contact.html"><a>Contact</a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+      
+</header>
+<div class="content">
+  <div>
+    <section>
+      <span class="slanted">Tired of Craigslist?</span>
+    </section>
+    <div class="description">
+      Welcome to Hodgepodge Garage! We are a technology company founded in Los Angeles, California 2021.
+      Our focus is to bring light and attention to hard to find garage sales. We strive to help those in 
+      need by bringing extra business to their residences in hopes of making a couple extra bucks! Oh, and 
+      we didn't forget about you thrifty shoppers, looking for your own pot of GOLD! We're working diligently
+      to help this market by: Placing your Garage Sale on the map. Relieving clutter when you're moving
+      to a new place. Helping thrifty shoppers find items for great prices. Running your own personal business
+      out of your very home. All the while creating the fun of an every day treasure hunt! We hope you enjoy
+      our services and ideas, and we will work tirelessly to improve the technology and overall user experience.
+      Now please, feel free to go and find your next little treasure!
+    </div>
+    <div class="clear"><!-- --></div>
+    <div class="learnmore">View Map</div>
+  </div>
+</div>
+
+
+<footer>
+  <ul>
+    <li class="navlink" data-url="about.html"><a>About</a></li>
+    <li class="navlink" data-url="location.html"><a>Locations</a></li>
+    <li class="navlink" data-url="map.html"><a>Map</a></li>
+    <li class="navlink" data-url="contact.html"><a>Contact</a></li>
+  </ul>
+  <div class="copyright">&copy;2021 Hodgepodge Garage</div>
+</footer>
+<script>
+  $(".learnmore").on("click", function(e){
+    e.stopPropagation();
+    e.preventDefault();
+    window.location.href = "map.html";
+  });
+  $(".navlink").on("click", function(e){
+    e.stopPropagation();
+    e.preventDefault();
+    window.location.href = $(this).data("url");
+  });
+</script>
+
+</body>
+
+</html>
