@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hodgepodge Garage</title>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1" id="wixDesktopViewport" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="javascript" src="js/main.js"></script>
+  <script>
+    
+  </script>
+  <script async
+  src="https://maps.googleapis.com/maps/api/js?v=3.46
+      &key=AIzaSyCwK4aY2cBGTd6xv5T7a6_U7eKsCAbTWO0&callback=init">
+</script>
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+<header>
+  <a href="index.html">
+    <div class="logo">Hodgepodge Garage</div>
+  </a>
+  <ul>
+    <li><a href="about.html">About</a></li>
+    <li><a href="location.html">Locations</a></li>
+    <li><a href="map.html">Map</a></li>
+     <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="clear"><!-- --></div>
+      
+</header>
+<div class="content" id="roadmap">
+  <script>
+    
+  </script>
+
+
+</div>
+<footer>
+  <ul>
+    <li><a href="about.html">About</a></li>
+    <li><a href="location.html">Locations</a></li>
+    <li><a href="map.html">Map</a></li>
+     <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="copyright">&copy;2021 Hodgepodge Garage</div>
+</footer>
+<script>
+   function init(){
+      window.onload = function(){
+        var myLatlng   = new google.maps.LatLng(34.0201613, -118.6919133);
+        var mapOptions = {
+          zoom: 10,
+          center: myLatlng,
+          mapTypeId: 'roadmap'
+        };
+        const map = new google.maps.Map(document.getElementById('roadmap'), mapOptions);
+       $.getJSON("hodgepodgegarage.json", function (json){
+          var data = json.markers;
+          data.forEach (function(item){
+            
+            var pin = new google.maps.LatLng(item.lat, item.long);
+            var marker = new google.maps.Marker({ 
+              position: pin, 
+              map: map, title: item.title
+                
+            });
+
+            marker.setMap(map);
+            
+          });
+      
+        });
+      };
+   };
+</script>
+
+</body>
+
+</html>

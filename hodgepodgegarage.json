@@ -1,0 +1,18 @@
+{
+    "markers": [
+        {
+            "long": 33.9063151,
+            "lat": -118.3808015, 
+            "address": "1030 Aviation Boulevard, El Segundo, CA",
+            "description": "Saturday and Sunday",
+            "title": "Open"
+        },
+        {
+            "long": 33.8829538,
+            "lat": -118.4122236, 
+            "address": "903 Manattan Ave, Manhattan Beach, CA",
+            "description": "Saturday and Sunday",
+            "title": "Open"
+        }
+    ]
+}
